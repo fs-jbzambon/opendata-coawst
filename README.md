@@ -2,8 +2,8 @@
 Scripts and code related to the USGS COAWST US East and Gulf Coast forecast model archive dataset on AWS Open Data Program. 
 
 ## Processing Steps
-### Getting Raw Data Files
-The [official USGS Data Publication for these files](https://www.sciencebase.gov/catalog/item/610acd4fd34ef8d7056893da) lists the [Globus Endpoint](https://app.globus.org/file-manager?origin_id=2e58c429-d1cf-4808-85a7-0d8214a4547e&origin_path=%2F) from which the original NetCDF files can be obtained.  
+### Rechunking the NetCDF files 
+The [official USGS Data Publication for these files](https://www.sciencebase.gov/catalog/item/610acd4fd34ef8d7056893da) lists the [Globus Endpoint](https://app.globus.org/file-manager?origin_id=2e58c429-d1cf-4808-85a7-0d8214a4547e&origin_path=%2F) from which the original NetCDF files can be obtained.  These NetCDF files have 12 or 13 hourly time steps, and were rechunked to be more performant on the cloud and better support a variety of use cases. 
 
 The scripts here were run on an HPC system with the files residing at `/proj/usgs-share/Projects/COAWST`, following the same directory structure as the Globus endpoint (for example, `/proj/usgs-share/Projects/COAWST/2009/coawst_us_20090821_01.nc`)
 
