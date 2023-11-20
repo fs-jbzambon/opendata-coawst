@@ -13,7 +13,7 @@ The first script, `coawst2zarr.py`, runs in parallel using Dask uses all CPUs:
 * Writes each time step of data found into the proper location in the Zarr dataset
 * After all the data has been written, uses [rechunker](https://github.com/pangeo-data/rechunker) to create a new zarr dataset with chunk sizes `nt = 168, ny = 168, nx = 224`.
 
-The second script, 'zarr2nc.py', runs serially using only one CPU:
+The second script, `zarr2nc.py`, runs serially using only one CPU:
 * Converts a zarr dataset into a NetCDF4 file, specifying compression settings. 
 
 We process all the weeks of the archive using a SLURM job array.  This allows weeks to be processed in parallel subject to the availabilty of nodes:
