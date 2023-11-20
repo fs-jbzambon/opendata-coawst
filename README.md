@@ -6,7 +6,7 @@ Scripts and code related to the USGS COAWST US East and Gulf Coast forecast mode
 ## Launch in SageMaker Studio Lab
 If you have an AWS SageMaker Studio Lab account, you can open in Studio Lab using the button below, then when prompted, choose to download the whole repo and to build the conda environment.   If you don't have an account, you can [sign up for free](https://studiolab.sagemaker.aws) (no AWS account required).
 
-[![Open In SageMaker Studio Lab](https://studiolab.sagemaker.aws/studiolab.svg)](https://studiolab.sagemaker.aws/import/github/https://github.com/fs-jbzambon/opendata-coawst/blob/main/notebooks/COAWST_explore.ipynb)
+[![Open In SageMaker Studio Lab](https://studiolab.sagemaker.aws/studiolab.svg)](https://studiolab.sagemaker.aws/import/github/https://github.com/fs-jbzambon/opendata-coawst/blob/main/COAWST_explore.ipynb)
 
 ## Data Processing Steps
 ### Rechunking the NetCDF files 
