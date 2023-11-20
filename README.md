@@ -3,6 +3,11 @@ Scripts and code related to the USGS COAWST US East and Gulf Coast forecast mode
 
 #### [Rendered version of the COAWST_explore notebook](https://nbviewer.org/gist/rsignell-usgs/83b95813d195b2e34ecd7d9812bc3f46)
 
+## Launch in SageMaker Studio Lab
+If you have an AWS SageMaker Studio Lab account, you can open in Studio Lab using the button below, then when prompted, choose to download the whole repo and to build the conda environment.   If you don't have an account, you can [sign up for free](https://studiolab.sagemaker.aws) (no AWS account required).
+
+[![Open In SageMaker Studio Lab](https://studiolab.sagemaker.aws/studiolab.svg)](https://studiolab.sagemaker.aws/import/github/https://github.com/fs-jbzambon/opendata-coawst/blob/main/notebooks/COAWST_explore.ipynb)
+
 ## Data Processing Steps
 ### Rechunking the NetCDF files 
 The [official USGS Data Publication for these files](https://www.sciencebase.gov/catalog/item/610acd4fd34ef8d7056893da) lists the [Globus Endpoint](https://app.globus.org/file-manager?origin_id=2e58c429-d1cf-4808-85a7-0d8214a4547e&origin_path=%2F) from which the original NetCDF files can be obtained.  These NetCDF files have 12 or 13 hourly time steps, and were rechunked to be more performant on the cloud and better support a variety of use cases. 
