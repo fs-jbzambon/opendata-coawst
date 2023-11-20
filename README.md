@@ -1,5 +1,7 @@
 # opendata-coawst
-Scripts and code related to the USGS COAWST US East and Gulf Coast forecast model archive dataset on AWS Open Data Program.  The model archive can be explored using the `COAWST_explore.ipynb` notebook. 
+Scripts and code related to the USGS COAWST US East and Gulf Coast forecast model archive dataset on AWS Open Data Program.  The model archive can be explored using the `COAWST_explore.ipynb` notebook.  
+
+#### [Rendered version of the COAWST_explore notebook](https://nbviewer.org/gist/rsignell-usgs/83b95813d195b2e34ecd7d9812bc3f46)
 
 ## Data Processing Steps
 ### Rechunking the NetCDF files 
