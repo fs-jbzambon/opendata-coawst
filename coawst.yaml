@@ -10,17 +10,17 @@ License: CC0
 Citation: Warner, J.C., Ganju, N.K., Sherwood, C.R., Kalra, T.S., Aretxabaleta, A., He, R., Zambon, J., and Kumar, N., 2019, Coupled-Ocean-Atmosphere-Wave-Sediment Transport (COAWST) Modeling System: U.S. Geological Survey Software Release, 23 April 2019, https://doi.org/10.5066/P9NQUAOW
 Resources:
   - Description: A collection of NetCDF4 files, kerchunk generated JSON files, and an Intake catalog
-    ARN:
+    ARN: arn:aws:s3:::usgs-coawst-archive
     Region: us-west-2
-    Type:
+    Type: S3 Bucket
     Explore:
 DataAtWork:
   Tutorials:
-    - Title:
-      URL:
-      NotebookURL:
-      AuthorName:
-      AuthorURL:
+    - Title: COAWST Explore
+      URL: https://github.com/fs-jbzambon/opendata-coaws
+      NotebookURL: https://github.com/fs-jbzambon/opendata-coawst/blob/main/COAWST_explore.ipynb
+      AuthorName: Rich Signell
+      AuthorURL: https://about.me/rich.signell
       Services:
   Tools & Applications:
     - Title:
