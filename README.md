@@ -14,7 +14,7 @@ The [official USGS Data Publication for these files](https://www.sciencebase.gov
 
 The scripts here were run on an HPC system with the files residing at `/proj/usgs-share/Projects/COAWST`, following the same directory structure as the Globus endpoint (for example, `/proj/usgs-share/Projects/COAWST/2009/coawst_us_20090821_01.nc`)
 
-The first script, `coawst2zarr.py`, runs in parallel using Dask uses all CPUs:
+The first script, `coawst2zarr.py`, runs in parallel using Dask using all CPUs available on the node:
 * Creates an empty Zarr dataset exactly one week long (168 hourly time steps)
 * Finds NetCDF files with data within this time period
 * Writes each time step of data found into the proper location in the Zarr dataset
