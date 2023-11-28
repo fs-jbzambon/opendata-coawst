@@ -7,31 +7,26 @@ UpdateFrequency: None
 Tags:
   - oceans
 License: CC0
-Citation: Warner, J.C., Ganju, N.K., Sherwood, C.R., Kalra, T.S., Aretxabaleta, A., He, R., Zambon, J., and Kumar, N., 2019, Coupled-Ocean-Atmosphere-Wave-Sediment Transport (COAWST) Modeling System: U.S. Geological Survey Software Release, 23 April 2019, https://doi.org/10.5066/P9NQUAOW
 Resources:
   - Description: A collection of NetCDF4 files, kerchunk generated JSON files, and an Intake catalog
     ARN: arn:aws:s3:::usgs-coawst-archive
     Region: us-west-2
     Type: S3 Bucket
-    Explore:
 DataAtWork:
   Tutorials:
-    - Title: COAWST Explore
-      URL: https://github.com/fs-jbzambon/opendata-coaws
+    - Title: COAWST Explorer Notebook
+      URL: https://github.com/fs-jbzambon/opendata-coawst
       NotebookURL: https://github.com/fs-jbzambon/opendata-coawst/blob/main/COAWST_explore.ipynb
       AuthorName: Rich Signell
       AuthorURL: https://about.me/rich.signell
       Services:
   Tools & Applications:
-    - Title:
-      URL:
-      AuthorName:
-      AuthorURL:
+    - Title: THREDDS Server
+      URL: http://geoport.usgs.esipfed.org/thredds/catalog/coawst_4/use/fmrc/catalog.html?dataset=coawst_4/use/fmrc/coawst_4_use_best.ncd
+      AuthorName: John Warner
+      AuthorURL: https://www.sciencebase.gov/catalog/items?filter0=partyWithName%3D10959_John+C+Warner&q=john+warner&&filter1=partyWithName%3D10959_John+C+Warner
   Publications:
-    - Title:
-      URL:
-      AuthorName:
-      AuthorURL:
-DeprecatedNotice:
-ADXCategories:
-  -    
+    - Title: Coupled-Ocean-Atmosphere-Wave-Sediment Transport (COAWST) Modeling System: U.S. Geological Survey Software Release, 23 April 2019, 
+      URL: https://doi.org/10.5066/P9NQUAOW
+      AuthorName: Warner, J.C., Ganju, N.K., Sherwood, C.R., Kalra, T.S., Aretxabaleta, A., He, R., Zambon, J., and Kumar, N.,
+ 
