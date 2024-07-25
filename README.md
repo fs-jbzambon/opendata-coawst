@@ -10,9 +10,17 @@ If you have an AWS SageMaker Studio Lab account, you can open in Studio Lab usin
 
 ## Run with Coiled
 You can run this notebook on a Jupyterlab instance on AWS us-west-2 using Coiled.     For example:
+
+You can setup software environments in Coiled:
 ```
 coiled env create --name pangeo-notebook --workspace esip-lab --conda coiled_pangeo_notebook_env.yml
-coiled env create --name esip-pangeo-arm --workspace esip-lab --conda pangeo_env.yml --architecture aarch64  
+coiled env create --name esip-pangeo-arm --workspace esip-lab --conda pangeo_env.yml --architecture aarch64
+```
+then if you create an API token, users can then run using:
+```
+conda create -n coiled -c conda-forge coiled
+conda activate coiled
+export DASK_COILED__TOKEN=18b82ee62e6c4c8dbfb81d8646xxxxxxxxxxxxxx
 
 coiled notebook start --region us-west-2 --vm-type m5.xlarge --software pangeo-notebook --name unconf --workspace esip-lab
 < open a terminal on jupyterlab>
