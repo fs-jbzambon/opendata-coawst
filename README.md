@@ -8,6 +8,17 @@ If you have an AWS SageMaker Studio Lab account, you can open in Studio Lab usin
 
 [![Open In SageMaker Studio Lab](https://studiolab.sagemaker.aws/studiolab.svg)](https://studiolab.sagemaker.aws/import/github/https://github.com/fs-jbzambon/opendata-coawst/blob/main/COAWST_explore.ipynb)
 
+## Run with Coiled
+You can run this notebook on a Jupyterlab instance on AWS us-west-2 using Coiled.     For example:
+```
+coiled env create --name pangeo-notebook --workspace esip-lab --conda coiled_pangeo_notebook_env.yml
+coiled env create --name esip-pangeo-arm --workspace esip-lab --conda pangeo_env.yml --architecture aarch64  
+
+coiled notebook start --region us-west-2 --vm-type m5.xlarge --software pangeo-notebook --name unconf --workspace esip-lab
+< open a terminal on jupyterlab>
+git clone https://github.com/fs-jbzambon/opendata-coawst.git
+< run COAWST_explore notebook!>
+```
 ## Data Processing Steps
 ### Rechunking the NetCDF files 
 The [official USGS Data Publication for these files](https://www.sciencebase.gov/catalog/item/610acd4fd34ef8d7056893da) lists the [Globus Endpoint](https://app.globus.org/file-manager?origin_id=2e58c429-d1cf-4808-85a7-0d8214a4547e&origin_path=%2F) from which the original NetCDF files can be obtained.  These NetCDF files have 12 or 13 hourly time steps, and were rechunked to be more performant on the cloud and better support a variety of use cases. 
