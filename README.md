@@ -10,7 +10,8 @@ Scripts and code related to the USGS COAWST US East and Gulf Coast forecast mode
 | [`COAWST_create_icechunk.ipynb`](COAWST_create_icechunk.ipynb) | Build the Icechunk virtual store from the remote COAWST NetCDF files on S3 |
 | [`COAWST_explore.ipynb`](COAWST_explore.ipynb) | *(Deprecated)* Explore the dataset via the intake catalog (Zarr/Kerchunk) |
 
-#### [Rendered version of the COAWST_explore notebook](https://nbviewer.org/gist/rsignell/7a4ccbbe91bfd682380129d2a67db88a)
+#### [Rendered version of COAWST_explore_icechunk.ipynb](https://nbviewer.org/gist/rsignell/5a979651f3119f348295193a14b8ab94)
+#### [Rendered version of COAWST_explore.ipynb (deprecated)](https://nbviewer.org/gist/rsignell/7a4ccbbe91bfd682380129d2a67db88a)
 
 ## Launch in SageMaker Studio Lab
 If you have an AWS SageMaker Studio Lab account, you can open in Studio Lab using the button below, then when prompted, choose to download the whole repo and to build the conda environment.   If you don't have an account, you can [sign up for free](https://studiolab.sagemaker.aws) (no AWS account required).
