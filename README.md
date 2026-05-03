@@ -10,33 +10,39 @@ Scripts and code related to the USGS COAWST US East and Gulf Coast forecast mode
 | [`COAWST_create_icechunk.ipynb`](COAWST_create_icechunk.ipynb) | Build the Icechunk virtual store from the remote COAWST NetCDF files on S3 |
 | [`COAWST_explore.ipynb`](COAWST_explore.ipynb) | *(Deprecated)* Explore the dataset via the intake catalog (Zarr/Kerchunk) |
 
-#### [Rendered version of COAWST_explore_icechunk.ipynb](https://nbviewer.org/gist/rsignell/5a979651f3119f348295193a14b8ab94)
+#### [Rendered version of COAWST_explore_icechunk.ipynb](https://notebooksharing.space/view/e732d02d1653ec9dcd0938bce890d8473b7503d59121ddddd169aea52835e105)
 #### [Rendered version of COAWST_explore.ipynb (deprecated)](https://nbviewer.org/gist/rsignell/7a4ccbbe91bfd682380129d2a67db88a)
+
+## Run with Coiled
+
+The recommended notebook (`COAWST_explore_icechunk.ipynb`) uses [Coiled](https://www.coiled.io/) for parallel Dask computation on AWS. No AWS credentials are needed to access the data — the COAWST dataset is publicly available on the [AWS Open Data Program](https://registry.opendata.aws/).
+
+### Create the Coiled software environment
+
+```bash
+coiled env create --name coawst-icechunk-arm --workspace YOUR_WORKSPACE \
+    --conda coawst-icechunk-env.yml --architecture aarch64
+```
+
+### Launch a notebook server
+
+```bash
+coiled notebook start --region us-west-2 --vm-type m7g.xlarge \
+    --software coawst-icechunk-arm --workspace YOUR_WORKSPACE
+```
+
+Then in the JupyterLab terminal:
+
+```bash
+git clone https://github.com/fs-jbzambon/opendata-coawst.git
+```
+
+Open and run `COAWST_explore_icechunk.ipynb`.
 
 ## Launch in SageMaker Studio Lab
 If you have an AWS SageMaker Studio Lab account, you can open in Studio Lab using the button below, then when prompted, choose to download the whole repo and to build the conda environment.   If you don't have an account, you can [sign up for free](https://studiolab.sagemaker.aws) (no AWS account required).
 
-[![Open In SageMaker Studio Lab](https://studiolab.sagemaker.aws/studiolab.svg)](https://studiolab.sagemaker.aws/import/github/https://github.com/fs-jbzambon/opendata-coawst/blob/main/COAWST_explore.ipynb)
-
-## Run with Coiled
-You can run this notebook on a Jupyterlab instance on AWS us-west-2 using Coiled.     For example:
-
-You can setup software environments in Coiled:
-```
-coiled env create --name pangeo-notebook --workspace esip-lab --conda coiled_pangeo_notebook_env.yml
-coiled env create --name esip-pangeo-arm --workspace esip-lab --conda pangeo_env.yml --architecture aarch64
-```
-then if you create an API token, users can then run using:
-```
-conda create -n coiled -c conda-forge coiled
-conda activate coiled
-export DASK_COILED__TOKEN=18b82ee62e6c4c8dbfb81d8646xxxxxxxxxxxxxx
-
-coiled notebook start --region us-west-2 --vm-type m5.xlarge --software pangeo-notebook --name unconf --workspace esip-lab
-< open a terminal on jupyterlab>
-git clone https://github.com/fs-jbzambon/opendata-coawst.git
-< run COAWST_explore notebook!>
-```
+[![Open In SageMaker Studio Lab](https://studiolab.sagemaker.aws/studiolab.svg)](https://studiolab.sagemaker.aws/import/github/https://github.com/fs-jbzambon/opendata-coawst/blob/main/COAWST_explore_icechunk.ipynb)
 ## Data Processing Steps
 ### Rechunking the NetCDF files 
 The [official USGS Data Publication for these files](https://www.sciencebase.gov/catalog/item/610acd4fd34ef8d7056893da) lists the [Globus Endpoint](https://app.globus.org/file-manager?origin_id=2e58c429-d1cf-4808-85a7-0d8214a4547e&origin_path=%2F) from which the original NetCDF files can be obtained.  These NetCDF files have 12 or 13 hourly time steps, and were rechunked to be more performant on the cloud and better support a variety of use cases. 
