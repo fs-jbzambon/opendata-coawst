@@ -5,10 +5,10 @@ Scripts and code related to the USGS COAWST US East and Gulf Coast forecast mode
 
 | Notebook | Description |
 |---|---|
-| [`COAWST_explore.ipynb`](COAWST_explore.ipynb) | Explore the dataset via the intake catalog (Zarr/Kerchunk) |
-| [`COAWST_explore_icechunk.ipynb`](COAWST_explore_icechunk.ipynb) | Explore the dataset via the Icechunk virtual store on S3 |
+| [`COAWST_explore_icechunk.ipynb`](COAWST_explore_icechunk.ipynb) | **Recommended.** Explore the dataset via the Icechunk virtual store on S3 |
 | [`COAWST_explore_icechunk_cubed.ipynb`](COAWST_explore_icechunk_cubed.ipynb) | Explore the Icechunk store using [Cubed](https://cubed-dev.github.io/cubed/) arrays executed on **AWS Lambda** via [Lithops](https://lithops-cloud.github.io/) — no persistent cluster needed |
 | [`COAWST_create_icechunk.ipynb`](COAWST_create_icechunk.ipynb) | Build the Icechunk virtual store from the remote COAWST NetCDF files on S3 |
+| [`COAWST_explore.ipynb`](COAWST_explore.ipynb) | *(Deprecated)* Explore the dataset via the intake catalog (Zarr/Kerchunk) |
 
 #### [Rendered version of the COAWST_explore notebook](https://nbviewer.org/gist/rsignell/7a4ccbbe91bfd682380129d2a67db88a)
 
