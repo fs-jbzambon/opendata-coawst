@@ -1,0 +1,27 @@
+name: coawst-icechunk
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python=3.12
+  - coiled
+  - dask
+  - fsspec
+  - h5netcdf
+  - h5py
+  - numpy
+  - s3fs>=2024
+  - xarray
+  - cf_xarray
+  - icechunk
+  - virtualizarr
+  - zarr==3.1.6  # cubed 0.26 needs RegularChunkGrid removed in zarr 3.2
+  - hvplot
+  - datashader
+  - panel
+  - geoviews
+  - ipykernel
+  - xoak
+  - cubed
+  - cubed-xarray
+  - lithops
