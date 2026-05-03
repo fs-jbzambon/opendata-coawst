@@ -63,7 +63,10 @@ We process all the weeks of the archive using a SLURM job array.  This allows we
 * `run_zarr2nc.sh` is submitted, which converts the week-long rechunked zarr datasets into week-long NetCDF files
 
 ### Creating references for the rechunked NetCDF files
-The Jupyter notebook `coawst_open_data_create_refs.ipynb` reads the remote NetCDF files on the AWS Open Data bucket and creates a references file using Kerchunk.  This references file can then be used to open the entire collection of NetCDF files as Xarray DataSet using the Zarr library.
+
+**Recommended (current best practice):** [`COAWST_create_icechunk.ipynb`](COAWST_create_icechunk.ipynb) uses [VirtualiZarr](https://virtualizarr.readthedocs.io/) to create virtual references to the remote NetCDF files and stores them in an [Icechunk](https://icechunk.io/) repository on S3. Icechunk provides version control, lazy manifest loading, and efficient random access — making it the preferred approach for cloud-native access to the archive.
+
+**Deprecated:** The Jupyter notebook `coawst_open_data_create_refs.ipynb` reads the remote NetCDF files on the AWS Open Data bucket and creates a Kerchunk references file. This references file can be used to open the entire collection as an Xarray Dataset via the Zarr library, but this approach has been superseded by the Icechunk/VirtualiZarr workflow above.
 
 
 
