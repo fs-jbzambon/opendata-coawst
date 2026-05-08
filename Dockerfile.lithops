@@ -1,0 +1,34 @@
+FROM python:3.12-slim-bullseye
+
+RUN apt-get update && apt-get install -y unzip && rm -rf /var/lib/apt/lists/*
+
+ARG FUNCTION_DIR="/function"
+RUN mkdir -p ${FUNCTION_DIR}
+WORKDIR ${FUNCTION_DIR}
+
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir \
+        awslambdaric \
+        boto3 \
+        numpy \
+        zarr \
+        icechunk \
+        xarray \
+        cf_xarray \
+        fsspec \
+        s3fs \
+        aiohttp \
+        aiobotocore \
+        "cubed>=0.27" \
+        lithops
+
+# lithops handler — zip is created by `lithops runtime build` before docker build runs
+COPY lithops_lambda.zip ${FUNCTION_DIR}
+RUN unzip lithops_lambda.zip \
+    && rm lithops_lambda.zip \
+    && mkdir handler \
+    && touch handler/__init__.py \
+    && mv entry_point.py handler/
+
+ENTRYPOINT [ "/usr/local/bin/python", "-m", "awslambdaric" ]
+CMD [ "handler.entry_point.lambda_handler" ]

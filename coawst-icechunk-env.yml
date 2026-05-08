@@ -15,7 +15,7 @@ dependencies:
   - cf_xarray
   - icechunk
   - virtualizarr
-  - zarr==3.1.6  # cubed 0.26 needs RegularChunkGrid removed in zarr 3.2
+  - zarr
   - hvplot
   - datashader
   - panel
@@ -23,6 +23,8 @@ dependencies:
   - ipykernel
   - xoak
   - dask-gateway
-  - cubed
+  - cubed>=0.27
   - cubed-xarray
-  - lithops
+  - pip
+  - pip:
+    - lithops
